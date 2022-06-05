@@ -15,6 +15,11 @@ body{
     background-image: linear-gradient(#05c672,#1442A7 );
 }
 
+.bg-audio{
+    opacity: 1;
+    z-index: 3000;
+}
+
 .game-title{
     position: absolute;
     top: 3%;

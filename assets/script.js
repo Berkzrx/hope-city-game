@@ -9,6 +9,10 @@ const gameArea = document.querySelector('.game-area');
 const restartButton = document.querySelector('.restart-button');
 const startMessage = document.querySelector('.start-message');
 const plane = document.querySelector('.plane');
+const bgAudio = new Audio('./assets/audios/audio-de-fundo.mp3');
+
+bgAudio.play();
+bgAudio.volume = .3;
 
 // Adicionando um evento 'keydown' na janela do browser que irá iniciar o jogo assim que apertar a tecla 'Espaço' do teclado.
 window.addEventListener('keydown', (event) => {
@@ -26,6 +30,12 @@ window.addEventListener('keydown', (event) => {
 
 // Criando função 'jump' que adiciona a classe CSS com animação do pulo no personagem e após 600ms, retira.
 const jump = () => {
+
+    bgAudio.volume = .3;
+
+    const jumpSound = new Audio('./assets/audios/jump.mp3');
+    jumpSound.play();
+    jumpSound.volume = .2; 
 
     personagem.classList.add('jump');
 
@@ -55,6 +65,12 @@ window.addEventListener('keydown', (event) => {
         
             if (personagemPosition < 63 && obstaclePosition <= 170 && obstaclePosition > 0){
         
+                const dead = new Audio ('./assets/audios/dead.mp3');
+                dead.play();
+                dead.volume = .5;
+
+                bgAudio.volume = 0;
+
                 personagem.src = './assets/images/dog-dead.png';
                 
                 obstacle.classList.remove('obstacle-start');
@@ -71,8 +87,6 @@ window.addEventListener('keydown', (event) => {
             };           
         }, 10);
     }
-
-
 });
 
 function reset(){

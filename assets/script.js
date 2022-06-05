@@ -9,11 +9,12 @@ const gameArea = document.querySelector('.game-area');
 const restartButton = document.querySelector('.restart-button');
 const startMessage = document.querySelector('.start-message');
 const plane = document.querySelector('.plane');
-const bgAudio = new Audio('./assets/audios/audio-de-fundo.mp3');
 
+const bgAudio = new Audio('./assets/audios/audio-de-fundo.mp3');
 bgAudio.play();
-bgAudio.volume = .3;
 bgAudio.loop = true;
+bgAudio.volume = .4;
+bgAudio.autoplay = true;
 
 // Adicionando um evento 'keydown' na janela do browser que irá iniciar o jogo assim que apertar a tecla 'Espaço' do teclado.
 window.addEventListener('keydown', (event) => {
@@ -31,7 +32,8 @@ window.addEventListener('keydown', (event) => {
 // Criando função 'jump' que adiciona a classe CSS com animação do pulo no personagem e após 600ms, retira.
 const jump = () => {
 
-    bgAudio.volume = .3;
+    bgAudio.volume = .4;
+
 
     const jumpSound = new Audio('./assets/audios/jump.mp3');
     jumpSound.play();
@@ -67,11 +69,9 @@ window.addEventListener('keydown', (event) => {
         
                 const dead = new Audio ('./assets/audios/dead.mp3');
                 dead.play();
-                dead.volume = .5;
+                dead.volume = .4;
 
-                setTimeout(() => {
-                    bgAudio.volume = 0;
-                },500);
+                bgAudio.volume = 0;
 
                 personagem.src = './assets/images/dog-dead.png';
                 
@@ -107,4 +107,3 @@ function reset(){
 restartButton.addEventListener('click', () => {
     reset();
 });
-

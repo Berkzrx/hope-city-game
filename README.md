@@ -2,7 +2,7 @@
   
 # Jogo: <br> "RUNAWAY FROM HOPE CITY"
   
-<h4>Projeto de um jogo utilizando as tecnologias HTML, CSS e Javascript. Simples, porém, de grande proveito para exercitar meus conhecimentos nestas tecnologias.</h4>
+<h4>Projeto de um jogo utilizando as tecnologias HTML, CSS e Javascript. De grande proveito para exercitar meus conhecimentos nestas tecnologias.</h4>
 <p>
 <!-- Image Shields -->
   <p>Dados sobre código fonte:</p>

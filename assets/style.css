@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', Arial, sans-serif;
+    font-weight: normal;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(#05c672,#1442A7 );
+}
+
+.game-title{
+    position: absolute;
+    top: 3%;
+    color: #ffd700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 5em;
+}
+
+.game-area{
+    position: absolute;
+    height: 450px;
+    width: 800px;
+    overflow: hidden;  
+    box-shadow: 0 0 20px #000;
+    border: 7px #ffd700 solid;
+    border-radius: 7px;
+}
+
+.start-message {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0, .6);
+    z-index: 100;
+    color: #fff;
+    font-family: 'VT323';
+    font-size: 2em;
+}
+
+.bg {
+    position: absolute;
+    height: 100%;
+    left: 0;
+}
+
+.bg-start{
+    animation: bg-transition 60s infinite;
+}
+
+.floor{
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+    z-index: 10;
+}
+
+.floor-start{
+    animation: floor-transition linear infinite 10s;
+}  
+
+  
+.obstacle {
+    position: absolute;
+    width: 60px;
+    bottom: 45px;
+    right: -60px;
+    z-index: 10 ;
+}
+
+
+.personagem{
+    position: absolute;
+    width: 70px;
+    bottom: 45px;
+    left: 100px;
+    z-index: 10;
+} 
+
+.copyright{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+    color: #ffd700;
+    font-size:1.2em;
+}
+
+
+
+/* ----------------------------------------------------------------------- */
+/* classes que serão adicionadas com o JS */
+
+.jump {
+    animation: jump 500ms ease-in-out;
+    
+}
+
+.game-over{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'VT323';
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0,0,0, .6);
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.game-over span:nth-child(1){
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    font-size: 4em;
+}
+.game-area span:nth-child(2){
+    position: absolute;
+    bottom: 1%;
+}
+
+.obstacle-start{
+    animation: obstacle-transition linear infinite 1.3s;
+}
+
+.restart-button {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 4px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #cb8400;
+    color: #fff;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-left: #ffe6b8 5px solid;
+    border-top: #ffe6b8 5px solid;
+    border-right: #805300 5px solid;
+    border-bottom: #805300 5px solid;
+    font-weight: bold;
+    z-index: 200;
+    display: none;
+}
+.restart-button:hover{
+    background-color: #ffd700;
+}
+
+.plane-start {
+    position: absolute;
+    width: 70px;
+    top: 40px;
+    animation: plane linear 10s infinite;
+}
+/* --------------------------------------------------------------- */
+
+/* Animations */
+
+
+/* jump animation */
+@keyframes jump { 
+    0% {
+        bottom: 45px;
+    }
+    40%{
+        bottom: 185px;
+    }
+    50%{
+        bottom: 185px;
+    }
+    60%{
+        bottom: 185px;
+    }
+    100% {
+        bottom:45px;
+    }
+}
+
+/* obstacle animation */
+@keyframes obstacle-transition {
+    from{
+        right: -40px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+/* background animation */
+@keyframes bg-transition {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-65%);
+    }
+}
+/* floor animation */
+@keyframes floor-transition {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translate(-70%);
+    }
+}
+
+/* plane animation */
+@keyframes plane {
+    0%{
+        right: -1000px;
+        top: 140px;
+    }
+    100%{
+        top: 30px;
+        right: 870px;
+    }
+}

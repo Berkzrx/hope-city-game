@@ -48,7 +48,7 @@ $ cd hope-city-game
 ```
 
 <div>
-  <img align="left" src="https://cdn.discordapp.com/attachments/732645583227191489/982912009152651294/CV.png" width=35 alt="Profile"/>
+  <img align="center" src="https://cdn.discordapp.com/attachments/732645583227191489/982912009152651294/CV.png" width=35 alt="Profile"/>
   <sub>Made with 🤍 by <a href="https://github.com/Berkzrx">Patricio Diniz</a></sub>
 </div>
 

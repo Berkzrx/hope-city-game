@@ -5,6 +5,7 @@
 <h4>Projeto de um jogo utilizando as tecnologias HTML, CSS e Javascript. Simples, porém, de grande proveito para exercitar meus conhecimentos nestas tecnologias.</h4>
 <p>
 <!-- Image Shields -->
+  <p>Dados sobre código fonte:</p>
 <img  alt="Language Top"  src="https://img.shields.io/github/languages/top/Berkzrx/hope-city-game">
 <img  alt="Languages Count"  src="https://img.shields.io/github/languages/count/Berkzrx/hope-city-game">
 <img  alt="Last Commit"  src="https://img.shields.io/github/last-commit/Berkzrx/hope-city-game">
@@ -14,12 +15,14 @@
 </p>
 
 <p align="center">
-<img src="https://cdn.discordapp.com/attachments/732645583227191489/982985064835084328/readme_there.png" width=900>
+<img src="https://cdn.discordapp.com/attachments/732645583227191489/983003338507448331/readme_there.png" width=900>
   <p>O jogo consiste em um cachorro que se inicia estacionado. Ao apertar a tecla "espaço" do seu teclado, o cenário começa a se mover e, junto dele, vem um obstáculo caracterizado por um fogo.</p>
   <p>A cada vez que você apertar a tecla "espaço", o cachoro irá pular, e seu objetivo é pular a maior quantidade de vezes possível por cima do obstáculo.</p>
   <p>Meu intuito ao aceitar este desafio foi colocar meus estudos das tecnologias HTML, CSS e JS em prática. Foi uma ótima experiência e de grande valor, visto que aprendi coisas novas como, por exemplo, as funções reservadas setInterval() e setTimeout() do Javascript.</p>
 </div>
-  
+  <p align="center">Experimente e jogue o jogo aqui:<br> <a href="https://berkzrx.github.io/hope-city-game/">https://berkzrx.github.io/hope-city-game/</a></p>
+<div align="center">
+            
 ### 👽 TECNOLOGIAS:
 
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="imagem" width="45"> &nbsp;
@@ -27,8 +30,10 @@
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="imagem" width="45"> &nbsp;
   
 ---
+</div>
 
-### :information_source: Como testar os códigos
+<div align="center">
+:information_source: Como testar os códigos
   
 Para clonar a aplicação, você vai precisar do [Git](https://git-scm.com) instalado em seu computador.
 Use os seguintes comandos:
@@ -47,3 +52,5 @@ $ cd hope-city-game
   <sub>Made with 🤍 by <a href="https://github.com/Berkzrx">Patricio Diniz</a></sub>
 </div>
 
+
+</div>

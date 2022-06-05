@@ -10,11 +10,15 @@ const restartButton = document.querySelector('.restart-button');
 const startMessage = document.querySelector('.start-message');
 const plane = document.querySelector('.plane');
 
-const bgAudio = new Audio('./assets/audios/audio-de-fundo.mp3');
-bgAudio.play();
-bgAudio.loop = true;
-bgAudio.volume = .4;
-bgAudio.autoplay = true;
+const jumpSound = new Audio('./assets/audios/jump.mp3');// Arquivo de áudio do pulo do personagem
+jumpSound.volume = .1; 
+
+const bgAudio = new Audio('./assets/audios/audio-de-fundo.mp3'); // Arquivo de áudio da música de fundo
+bgAudio.loop;
+bgAudio.volume = .2;
+bgAudio.autoplay;
+
+const dead = new Audio ('./assets/audios/dead.mp3'); // Arquivo de áudio da morte do personagem.
 
 // Adicionando um evento 'keydown' na janela do browser que irá iniciar o jogo assim que apertar a tecla 'Espaço' do teclado.
 window.addEventListener('keydown', (event) => {
@@ -32,12 +36,10 @@ window.addEventListener('keydown', (event) => {
 // Criando função 'jump' que adiciona a classe CSS com animação do pulo no personagem e após 600ms, retira.
 const jump = () => {
 
-    bgAudio.volume = .4;
+    bgAudio.play();
+    bgAudio.volume = .2;
 
-
-    const jumpSound = new Audio('./assets/audios/jump.mp3');
-    jumpSound.play();
-    jumpSound.volume = .2; 
+    jumpSound.play(); // Sempre que a função 'jump' for chamada, ela irá acionar este audio.
 
     personagem.classList.add('jump');
 
@@ -67,7 +69,6 @@ window.addEventListener('keydown', (event) => {
         
             if (personagemPosition < 63 && obstaclePosition <= 170 && obstaclePosition > 0){
         
-                const dead = new Audio ('./assets/audios/dead.mp3');
                 dead.play();
                 dead.volume = .4;
 
@@ -107,3 +108,33 @@ function reset(){
 restartButton.addEventListener('click', () => {
     reset();
 });
+
+
+// Função que calcula 
+const muted = () => {
+
+    let clickContador = 0;
+
+    const soundOutput = document.querySelector('.sound-button');
+    soundOutput.addEventListener('click', () =>{
+
+    clickContador++;
+
+    if(clickContador % 2 === 0){
+
+        bgAudio.muted = false;
+        jumpSound.muted = false;
+        dead.muted = false;
+        soundOutput.src = './assets/images/sound-icon.png';
+        
+    }else{
+        
+        bgAudio.muted = true;
+        jumpSound.muted = true;
+        dead.muted = true;
+        soundOutput.src = './assets/images/muted-sound-icon.png';
+    }
+});
+};
+
+muted();

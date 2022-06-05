@@ -15,18 +15,15 @@ body{
     background-image: linear-gradient(#05c672,#1442A7 );
 }
 
-.bg-audio{
-    opacity: 1;
-    z-index: 3000;
-}
 
 .game-title{
     position: absolute;
-    top: 3%;
+    top: 1%;
     color: #ffd700;
     text-transform: uppercase;
     letter-spacing: 4px;
     font-size: 5em;
+    text-shadow: 3px 3px black;
 }
 
 .game-area{
@@ -51,6 +48,7 @@ body{
     color: #fff;
     font-family: 'VT323';
     font-size: 2em;
+    text-shadow: 3px 3px black;
 }
 
 .bg {
@@ -60,7 +58,7 @@ body{
 }
 
 .bg-start{
-    animation: bg-transition 60s infinite;
+    animation: bg-transition 60s infinite linear;
 }
 
 .floor{
@@ -101,7 +99,13 @@ body{
     font-size:1.2em;
 }
 
-
+.sound-button {
+    position: absolute;
+    bottom: 2em;
+    right: 3em;
+    width: 3em;
+    cursor: pointer;
+}
 
 /* ----------------------------------------------------------------------- */
 /* classes que serão adicionadas com o JS */
@@ -123,6 +127,7 @@ body{
     background: rgba(0,0,0, .6);
     letter-spacing: 2px;
     color: #fff;
+    text-shadow: 4px 4px black;
 }
 
 .game-over span:nth-child(1){
@@ -212,7 +217,7 @@ body{
         transform: translateX(0);
     }
     to{
-        transform: translateX(-65%);
+        transform: translateX(-80%);
     }
 }
 /* floor animation */

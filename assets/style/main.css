@@ -107,6 +107,22 @@ body{
     cursor: pointer;
 }
 
+.social-medias{
+    position: absolute;
+    left: 2em;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.social-medias a{
+    margin: 1em 0;
+}
+.social-medias a img{
+    width: 2em;
+}
+
 /* ----------------------------------------------------------------------- */
 /* classes que serão adicionadas com o JS */
 

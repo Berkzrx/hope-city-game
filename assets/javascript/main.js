@@ -11,12 +11,10 @@ const startMessage = document.querySelector('.start-message');
 const plane = document.querySelector('.plane');
 
 const jumpSound = new Audio('./assets/audios/jump.mp3');// Arquivo de áudio do pulo do personagem
-jumpSound.volume = .1; 
+jumpSound.volume = .02; 
 
 const bgAudio = new Audio('./assets/audios/audio-de-fundo.mp3'); // Arquivo de áudio da música de fundo
 bgAudio.loop;
-bgAudio.volume = .2;
-bgAudio.autoplay;
 
 const dead = new Audio ('./assets/audios/dead.mp3'); // Arquivo de áudio da morte do personagem.
 
@@ -37,7 +35,7 @@ window.addEventListener('keydown', (event) => {
 const jump = () => {
 
     bgAudio.play();
-    bgAudio.volume = .2;
+    bgAudio.volume = .1;
 
     jumpSound.play(); // Sempre que a função 'jump' for chamada, ela irá acionar este audio.
 
@@ -66,11 +64,11 @@ window.addEventListener('keydown', (event) => {
             const personagemPosition = Number((window.getComputedStyle(personagem).bottom).replace('px', ' '));
             const obstaclePosition = Number((window.getComputedStyle(obstacle).left).replace('px', ' '));
         
-        
+            // Condicional para que o jogo reinicie
             if (personagemPosition < 63 && obstaclePosition <= 170 && obstaclePosition > 0){
         
                 dead.play();
-                dead.volume = .4;
+                dead.volume = .05;
 
                 bgAudio.volume = 0;
 
@@ -108,33 +106,3 @@ function reset(){
 restartButton.addEventListener('click', () => {
     reset();
 });
-
-
-// Função que calcula 
-const muted = () => {
-
-    let clickContador = 0;
-
-    const soundOutput = document.querySelector('.sound-button');
-    soundOutput.addEventListener('click', () =>{
-
-    clickContador++;
-
-    if(clickContador % 2 === 0){
-
-        bgAudio.muted = false;
-        jumpSound.muted = false;
-        dead.muted = false;
-        soundOutput.src = './assets/images/sound-icon.png';
-        
-    }else{
-        
-        bgAudio.muted = true;
-        jumpSound.muted = true;
-        dead.muted = true;
-        soundOutput.src = './assets/images/muted-sound-icon.png';
-    }
-});
-};
-
-muted();
